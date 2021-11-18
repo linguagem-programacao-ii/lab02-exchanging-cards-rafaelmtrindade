@@ -3,10 +3,19 @@ import java.util.TreeSet;
 
 public class ExchangingCards {
     public static void main(String[] args) throws IOException{
-        InputStreamReader ir = new InputStreamReader(System.in);
+        boolean manualTest = false;
+
+        InputStreamReader ir;
+        if(!manualTest){
+            FileInputStream fis = new FileInputStream("./tests/01.in");
+            ir = new InputStreamReader(fis);
+        }else{
+            ir = new InputStreamReader(System.in);
+        }
         BufferedReader br = new BufferedReader(ir);
 
-        OutputStreamWriter ow = new OutputStreamWriter(System.out);
+        FileOutputStream fos = new FileOutputStream("./tests/01test-java.out");
+        OutputStreamWriter ow = new OutputStreamWriter(fos);
         BufferedWriter bw = new BufferedWriter(ow);
 
         boolean isFirstLine = true;
@@ -42,6 +51,8 @@ public class ExchangingCards {
             bw.write(Integer.toString(maxTrades));
             bw.flush();
         }
+    br.close();
+    bw.close();
     }
 
     private static int[] parseStringToIntArr(String stringOfInts){

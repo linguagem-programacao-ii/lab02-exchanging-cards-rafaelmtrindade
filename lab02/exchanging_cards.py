@@ -15,7 +15,7 @@ def write_to(path: str, text: list[str]):
 manual_test = False
 
 in_source = lines_from('./tests/01.in')
-out_path = './tests/01test.out'
+out_path = './tests/01test-python.out'
 
 results = []
 while True:
